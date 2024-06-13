@@ -1,0 +1,17 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"name":{
+			"type":"string"
+		},
+		"content":{
+			"type":"string"
+		},
+		"avatar":{
+			"type":"string"
+		}
+	},
+	"additionalProperties": false,
+	"required":["name","content","avatar"]
+}

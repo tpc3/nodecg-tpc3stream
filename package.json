@@ -1,0 +1,146 @@
+{
+  "name": "tpc3stream",
+  "version": "1.0.0",
+  "description": "NodeCG bundle for TPC3",
+  "homepage": "https://www.tpc3.org/",
+  "author": {
+    "name": "tpc3",
+    "email": "contact@tpc3.org",
+    "url": "https://www.tpc3.org/"
+  },
+  "files": [
+    "dashboard",
+    "graphics",
+    "extension.js",
+    "extension"
+  ],
+  "keywords": [
+    "",
+    "nodecg-bundle"
+  ],
+  "nodecg": {
+    "compatibleRange": "^2.0.0",
+    "assetCategories": [
+      {
+        "name": "streams",
+        "title": "Streams",
+        "allowedTypes": ["json"]
+      },
+      {
+        "name": "images",
+        "title": "Images",
+        "allowedTypes": ["png", "jpeg", "jpg", "gif"]
+      }
+    ],
+    "dashboardPanels": [
+      {
+        "width": "2",
+        "name": "time",
+        "title": "Time",
+        "file": "time.html"
+      },
+      {
+        "width": "4",
+        "name": "current",
+        "title": "Current",
+        "file": "current.html"
+      },
+      {
+        "width": "4",
+        "name": "title",
+        "title": "Title",
+        "file": "title.html"
+      },
+      {
+        "name": "image",
+        "title": "Image",
+        "width": 2,
+        "file": "image.html",
+        "headerColor": "#525F78"
+      },
+      {
+        "name": "push_and_tech",
+        "title": "Push & Tech",
+        "width": 4,
+        "file": "push_and_tech.html",
+        "headerColor": "#525F78"
+      },
+      {
+        "name": "switch",
+        "title": "Switch",
+        "width": 2,
+        "file": "switch.html",
+        "headerColor": "#525F78"
+      },
+      {
+        "width": "6",
+        "name": "embed",
+        "title": "Embed",
+        "file": "embed.html"
+      }
+    ],
+    "graphics": [
+      {
+        "file": "frame_1.html",
+        "width": 1920,
+        "height": 1080,
+        "singleInstance": false
+      },
+      {
+        "file": "queue_1.html",
+        "width": 1920,
+        "height": 1080,
+        "singleInstance": false
+      },
+      {
+        "file": "main.html",
+        "width": 1920,
+        "height": 1080,
+        "singleInstance": false
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs --all",
+    "build:extension": "node scripts/build.mjs --extension",
+    "watch": "node scripts/build.mjs --all --watch",
+    "watch:browser": "node scripts/build.mjs --dashboard --graphics --watch",
+    "watch:schemas": "node scripts/build.mjs --schemas --watch",
+    "dev": "concurrently --kill-others \"npm run watch:schemas\" \"npm run watch:browser\" \"nodemon\"",
+    "generate-schema-types": "trash src/types/schemas && nodecg schema-types"
+  },
+  "dependencies": {
+    "ts-node": "*"
+  },
+  "devDependencies": {
+    "@nodecg/types": "^2.0.0",
+    "@parcel/config-default": "*",
+    "@parcel/core": "*",
+    "@parcel/reporter-cli": "*",
+    "@parcel/validator-typescript": "*",
+    "@types/animejs": "^3.1.12",
+    "@types/node": "^18",
+    "animejs": "^3.2.2",
+    "autoprefixer": "^10.4.18",
+    "concurrently": "*",
+    "glob": "^10.2.7",
+    "nodemon": "*",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1",
+    "trash-cli": "*",
+    "typescript": "^5.1.3"
+  },
+  "license": "MIT"
+}

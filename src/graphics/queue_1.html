@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" class="m-0 p-0">
+    <head>
+        <meta charset="UTF-8" />
+        <title>queue</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="main.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    </head>
+    <body class="m-0 p-0 w-screen h-screen bg-black overflow-hidden text-4xl text-white">
+        <div class="absolute w-[1920px] h-[1080px] border-2 -z-20 border-black"></div>
+        <div class="absolute w-screen h-screen overflow-hidden -z-30 brightness-50">
+            <img id="bg" class="hidden object-cover object-center w-screen h-screen" src="./default_bg.png">
+        </div>
+        <div id="top" class="pt-28 px-20 flex flex-row justify-between">
+            <div id="tpc3" class="font-logo text-5xl">$> [TPC3]<span id="cursor">_</span></span></div>
+            <div id="clock" class="font-jp text-right">00:00:00</div>
+        </div>
+        <div id="stream-info" class="mt-12 mx-20 flex flex-row items-center text-4xl">
+            <div id="title" class="pr-2 flex flex-row justify-start items-center gap-1 align-middle">
+                <span id="title-icon" class="mdi mdi-flag align-sub text-4xl"></span>
+                <span id="title-text"></span> 
+            </div>
+            <div id="author" class="px-2 border-l-2 border-white flex flex-row justify-start items-center gap-1 align-middle">
+                <span class="mdi mdi-account-supervisor align-sub text-4xl"></span>
+                <span id="author-text"></span>
+            </div>
+            <div id="url" class="pl-2 border-l-2 border-white flex flex-row justify-start items-center gap-1 align-middle">
+                <span class="mdi mdi-link align-sub text-4xl"></span>
+                <span id="url-text"></span>
+            </div>
+        </div>
+        <div id="tech" class="mt-10 mx-20 text-3xl flex flex-row justify-start items-center gap-1 align-middle">
+            <span id="tech-icon" class="material-icons text-4xl">info</span>
+            <span id="tech-text">ここにはお知らせが表示されます</span>
+        </div>
+        <div id="onair" class="mt-24 mx-40 h-[320px] grid gap-12">
+            <div class=" flex flex-row justify-start items-start gap-4 align-middle">
+                <div class="mdi mdi-chevron-right text-6xl"></div>
+                <div id="onair-text" class="font-mincho text-6xl tracking-wide"></div>
+            </div>
+            <div class="flex flex-row justify-start items-center gap-4 align-middle">
+                <div class="mdi mdi-account align-sub text-5xl"></div>
+                <div id="by-text" class="text-5xl font-mincho tracking-wide"></div>
+            </div>
+            <div class="flex flex-row justify-start items-center gap-4 align-middle">
+                <div class="mdi mdi-book-clock text-5xl"></div>
+                <div id="time-text" class="text-5xl font-mincho tracking-wide"></div>
+            </div>
+            <div class="flex flex-row justify-start items-center gap-4 align-middle">
+                <div id="category-icon"class="mdi mdi-cards-playing text-5xl"></div>
+                <div id="category-text" class="text-5xl font-mincho tracking-wide"></div>
+            </div>
+        </div>
+        <div id="bgm" class="absolute bottom-16 mx-20 flex flex-row justify-start items-center gap-1 align-middle">
+            <span class="mdi mdi-music align-sub text-4xl"></span>
+            <span id="bgm-text" class="line-clamp-1">○○ - Test Music</span>
+        </div>
+    </body>
+    <script src="./queue_1.ts" type="module"></script>
+</html>

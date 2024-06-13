@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Push & Tech</title>
+    <style>
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>Push</h2>
+        <section>
+            <label for="push-enable">Enable: </label>
+            <input type="checkbox" name="push-enable" id="push-enable"></input> 
+        </section>
+        <section>
+            <input name="push" id="push-form" size="55"></input>
+        </section>
+    <h2>Tech</h2>
+    <ul id="tech-list" class="tech-list">
+    </ul>
+    <button type="button" id="tech-add">add</button>
+    <button type="button" id="tech-remove" disabled>remove</button>
+    <button id="tech-apply" style="font-size: large;">Apply</button>
+    <p>アイコン名は<a href="https://fonts.google.com/icons?icon.set=Material+Icons&icon.style=Filled" target="_blank" rel="noopener noreferrer" style="color: aqua;">Google FontsのMaterial Icons</a>を参照</p>
+    <li id="template" class="hidden">
+        <form action="" method="get" class="form">
+            <section>
+                <input type="text"name="info" size="50"></input>
+            </section>
+            <section>
+                <label for="icon">Icon: </label>
+                <input type="text" name="icon" size="10" id="icon"></input>
+            </section>
+        </form>        
+    </li>
+</body>
+<script type="module" src="./push_and_tech.ts"></script>
+</html>

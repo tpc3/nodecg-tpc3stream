@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>frame</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="main.css" rel="stylesheet">
+
+        <style>
+            .text-border{
+                -webkit-text-stroke: 1px #000;
+            }
+        </style>
+    </head>
+    <body class="w-screen h-screen overflow-hidden">
+        <!--Template-->
+        <div class="hidden">
+            <div id="vc-template" class="align-middle p-1 flex flex-row-reverse items-center opacity-75">
+                <img class="rounded-full inline bg-white shadow w-10 h-10" src="./account.png"/>
+                <div class="bg-sky-200 px-3 mr-2 rounded-xl shadow inline-block align-middle font-jp text-lg font-bold">Anonymous</div>
+            </div>
+            <div id="chat-template" class="flex flex-col items-end">
+                <div id="chat-author" class="font-jp text-white text-base font-extrabold drop-shadow-lg text-border">test</div>
+                <div class="rounded-t-2xl rounded-bl-2xl p-2 bg-indigo-200/75 shadow">
+                    <span id="chat-content" class="font-bold break-all text-lg leading-tight line-clamp-3">test</span>
+                </div>
+            </div>
+        </div>
+        <!--Playback-->
+        <div id="playback" class="absolute bottom-2 left-2 max-w-1/4 h-12 py-2 px-4 bg-rose-200/75 shadow-lg text-2xl rounded-full flex flex-row justify-start items-center gap-1 overflow-hidden" style="transform: translateY(120%);">
+            <div class="mdi mdi-music text-2xl"></div>
+            <div id="playback-text" class="font-jp font-medium self-start">
+                <div id="artist" class="line-clamp-1">Stopped</div>
+                <div id="track" class="line-clamp-1 pt-2">Test</div>
+            </div>
+        </div>
+        <!--Stream Information-->
+        <div class="absolute top-0 right-0 py-2 px-3 bg-slate-200/75 shadow rounded-bl-3xl flex flex-row text-2xl">
+            <div class="max-w-[30vw] align-middle overflow-hidden px-2 flex gap-1 items-center justify-center">
+                <div id="category" class="mdi mdi-information"></div>
+                <div class="font-jp font-medium line-clamp-1">
+                    <span id="onair"></span>
+                </div>
+            </div>
+            <div class="max-w-[15vw] align-middle overflow-hidden border-l px-2 border-gray-400 flex gap-1 items-center justify-center">
+                <div class="mdi mdi-account"></div>
+                <div class="font-jp font-medium line-clamp-1">
+                    <span id="by"></span>
+                </div>
+            </div>
+            <div class="align-middle overflow-hidden border-l border-gray-400 px-2 flex gap-1 items-center justify-center">
+                <div class="mdi mdi-clock-outline"></div>
+                <div id="clock" class="font-jp font-medium">00:00:00</div>
+            </div>
+        </div>
+        <!--Chat-->
+		<div id="chat" class="absolute overflow-hidden bottom-2 right-0 pr-4 w-72 max-h-80 flex flex-col items-end justify-start">
+        </div>
+        <!--VC-->
+        <div id="vc" class="absolute right-2 top-16 flex flex-col gap-1">
+        </div>
+        <!--Top-->
+        <!--Bottom-->
+    </body>
+    <script src="./frame_1.ts" type="module"></script>
+</html>

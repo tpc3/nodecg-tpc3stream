@@ -1,0 +1,22 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"state": {
+			"description": "false: Stopped, true: Playing",
+			"type": "boolean"
+		},
+		"title": {
+			"type": "string"
+		},
+		"author": {
+			"type": "string"
+		}
+	},
+	"additionalProperties": false,
+	"required": ["state", "title"],
+	"default": {
+		"state": false,
+		"title": ""
+	}
+}

@@ -77,6 +77,13 @@
         "name": "embed",
         "title": "Embed",
         "file": "embed.html"
+      },
+      {
+        "width": "4",
+        "name": "json_editor",
+        "title": "JSON Editor",
+        "file": "json_editor.html",
+        "workspace": "Accessories"
       }
     ],
     "graphics": [

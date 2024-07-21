@@ -1,4 +1,3 @@
-import e from "express";
 import type { InfoReplicant } from "../types/schemas/infoReplicant";
 const techList = document.getElementById("tech-list");
 const addBtn = document.getElementById("tech-add");

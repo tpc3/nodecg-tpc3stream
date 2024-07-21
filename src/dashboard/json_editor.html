@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Json Editor</title>
+</head>
+<body>
+    <section>
+        <label for="name">File Name</label>
+        <input type="text" id="name" name="name" size="20">
+    </section>
+    <section>
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" size="40">
+    </section>
+    <section>
+        <label for="author">Author</label>
+        <input type="text" id="author" name="author" size="20">
+    </section>
+    <section>
+        <lavel for="startTime">Start & End Time</lavel><br>
+        <input type="time" id="startTime"> ~ <input type="time" id="endTime">
+    </section>
+    <section>
+        <label for="category">Category</label>
+        <input type="text" id="category" name="category" size="5">
+    </section>
+    <section>
+        <select id="pulldown"></select>
+        <button id="load">Load</button>
+        <button id="save">Save</button>
+    </section>
+</body>
+<script type="module" src="./json_editor.ts"></script>
+</html>

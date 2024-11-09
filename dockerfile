@@ -1,6 +1,7 @@
 # build phase
-FROM node:18-slim AS build
+FROM ghcr.io/nodecg/nodecg:2 AS build
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
+USER root
 RUN apt-get update \
 	&& apt-get install -y trash-cli
 COPY . /tpc3stream

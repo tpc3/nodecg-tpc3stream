@@ -1,8 +1,10 @@
-FROM node:20-alpine
+FROM ghcr.io/nodecg/nodecg:2
 WORKDIR /opt/nodecg
-RUN apk add --no-cache git make gcc python3 musl-dev g++ trash-cli && npm install --global nodecg-cli && nodecg setup
-COPY . /opt/nodecg/bundles/tpc3stream/
+RUN apk add --no-cache git make gcc python3 musl-dev g++ trash-cli
+USER nodecg
+COPY --chown=nodecg:nodecg . /opt/nodecg/bundles/tpc3stream/
 WORKDIR /opt/nodecg/bundles/tpc3stream/
-RUN npm i && npm run build && apk del git make gcc python3 musl-dev g++ trash-cli
-WORKDIR /opt/nodecg
-CMD ["node", "index.js"]
+RUN npm i && npm run build
+USER root
+RUN apk del git make gcc python3 musl-dev g++ trash-cli
+USER nodecg

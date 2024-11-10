@@ -1,8 +1,16 @@
-FROM node:20-alpine
+# build phase
+FROM ghcr.io/nodecg/nodecg:2 AS build
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
+USER root
+RUN apt-get update \
+	&& apt-get install -y trash-cli
+COPY . /tpc3stream
+WORKDIR /tpc3stream
+RUN npm ci && npm run build
+
+# mount phase
+FROM ghcr.io/nodecg/nodecg:2 AS nodecg
 WORKDIR /opt/nodecg
-RUN apk add --no-cache git make gcc python3 musl-dev g++ trash-cli && npm install --global nodecg-cli && nodecg setup
-COPY . /opt/nodecg/bundles/tpc3stream/
-WORKDIR /opt/nodecg/bundles/tpc3stream/
-RUN npm i && npm run build && apk del git make gcc python3 musl-dev g++ trash-cli
-WORKDIR /opt/nodecg
-CMD ["node", "index.js"]
+USER nodecg
+COPY --chown=nodecg:nodecg --from=build /tpc3stream /opt/nodecg/bundles/tpc3stream
+CMD ["node", "/opt/nodecg/index.js"]
